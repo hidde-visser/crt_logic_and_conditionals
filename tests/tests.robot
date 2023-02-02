@@ -32,6 +32,23 @@ Loop Over a List with Nested If Statement
         END
     END
 
+AnotherTest
+    [Documentation]
+    [Tags]
+    @{OD_Data}    Create List    Operational Data    More
+    FOR   ${data}     IN     in    @{OD_Data}
+        ${data}       IsText       More
+         Log                     'wat is de data'${data}
+        IF                      '${data}' == 'Admin'
+            Log                 The current user is an Admin
+        ELSE IF                 '${data}' == 'Guest'
+            Log                 The current user is an Guest
+        ELSE
+            Log                 The current user is someone else
+        END
+    END
+
+
 
 IF Statement
     ${number}=                  Set Variable                10
